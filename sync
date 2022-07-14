@@ -1,0 +1,14 @@
+#! /bin/sh
+DIST=dev/main
+R=/root/build
+
+for f in ${R}/ceph/*.deb
+do
+	b=$(basename ${f})
+	case ${b} in
+		*dbgsym*|*_amd64.deb|*dbg_*) ;;
+		*_arm64.deb) rsync -ptog ${f} ${DIST}/binary-arm64/${b} ;;
+		*_all.deb) rsync -ptog ${f} ${DIST}/binary-all/${b} ;;
+		*) ;;
+	esac
+done

@@ -1,0 +1,1188 @@
+Package: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 14
+Depends: ceph-mgr (= 17.2.1-pve1), ceph-mon (= 17.2.1-pve1), ceph-osd (= 17.2.1-pve1)
+Recommends: ceph-mds (= 17.2.1-pve1), ceph-dkms
+Filename: dev/main/binary-arm64/ceph_17.2.1-pve1_arm64.deb
+Size: 8948
+MD5sum: 2afa9f035682b7b63e6ae413897aaa79
+SHA1: 0e806dff4b66b7fc5f044fdca07a5eadbecbc9f8
+SHA256: 43449151bf47f120baf63e5b88dfc2c684424ee9d8fbc4734b1fd7fde243c26a
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: distributed storage and file system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+
+Package: ceph-base
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 32270
+Depends: binutils, ceph-common (= 17.2.1-pve1), debianutils, findutils, grep, logrotate, parted, psmisc, python3.9:any, libaio1 (>= 0.3.93), libc6 (>= 2.30), libgcc-s1 (>= 4.2), libgoogle-perftools4, liblz4-1 (>= 0.0~r130), librados2, libsnappy1v5 (>= 1.1.8), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), zlib1g (>= 1:1.1.4)
+Recommends: btrfs-tools, ceph-mds (= 17.2.1-pve1), librados2 (= 17.2.1-pve1), libradosstriper1 (= 17.2.1-pve1), librbd1 (= 17.2.1-pve1), ntp | time-daemon, nvme-cli, smartmontools
+Breaks: ceph (<< 10), ceph-test (<< 12.2.2-14), libpve-storage-perl (<= 5.0-25), python-ceph (<< 0.92-1223)
+Replaces: ceph (<< 10), ceph-common (<< 0.78-500), ceph-test (<< 12.2.2-14), python-ceph (<< 0.92-1223)
+Filename: dev/main/binary-arm64/ceph-base_17.2.1-pve1_arm64.deb
+Size: 5584060
+MD5sum: 43781b61b125fe8fbe81fba99400faa6
+SHA1: d10e09d1d68158e3122cf4beb64cb5ea043c66a2
+SHA256: 98129c19cad342ff17550ca0eb407533a64fdbcc1edc79a1b7d209288a7e1aed
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: common ceph daemon libraries and management tools
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the libraries and management tools that are common among
+ the Ceph server daemons (ceph-mon, ceph-mgr, ceph-osd, ceph-mds). These tools
+ are necessary for creating, running, and administering a Ceph storage cluster.
+
+Package: ceph-common
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 102488
+Depends: librbd1 (= 17.2.1-pve1), python3-cephfs (= 17.2.1-pve1), python3-ceph-argparse (= 17.2.1-pve1), python3-ceph-common (= 17.2.1-pve1), python3-prettytable, python3-rados (= 17.2.1-pve1), python3-rbd (= 17.2.1-pve1), python3-rgw (= 17.2.1-pve1), python3.9:any, python3:any, libaio1 (>= 0.3.93), libbabeltrace1 (>= 1.5.4), libblkid1 (>= 2.17.2), libc6 (>= 2.30), libcap-ng0 (>= 0.7.9), libcephfs2, libcurl4 (>= 7.28.0), libexpat1 (>= 2.0.1), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 4.5), libgoogle-perftools4, libicu67 (>= 67.1-1~), libkeyutils1 (>= 1.4), libldap-2.4-2 (>= 2.4.7), liblua5.3-0, liblz4-1 (>= 1.8.0), libncurses6 (>= 6), liboath0 (>= 1.10.0), librabbitmq4 (>= 0.10.0), librados2, libradosstriper1, librdkafka1 (>= 0.9.2), libsnappy1v5 (>= 1.1.8), libsqlite3-0 (>= 3.5.9), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), libthrift-0.13.0 (>= 0.13.0-1~), libtinfo6 (>= 6), libudev1 (>= 183), zlib1g (>= 1:1.2.0)
+Suggests: ceph-base (= 17.2.1-pve1), ceph-mds (= 17.2.1-pve1)
+Conflicts: ceph-client-tools
+Breaks: ceph (<< 10), ceph-fs-common (<< 11.0), ceph-test (<< 9.0.3-1646), libpve-storage-perl (<= 5.0-25), librbd1 (<< 0.92-1238), python-ceph (<< 0.92-1223), radosgw (<< 12.0.3)
+Replaces: ceph (<< 10), ceph-client-tools, ceph-fs-common (<< 11.0), ceph-test (<< 9.0.3-1646), librbd1 (<< 0.92-1238), python-ceph (<< 0.92-1223), radosgw (<< 12.0.3)
+Filename: dev/main/binary-arm64/ceph-common_17.2.1-pve1_arm64.deb
+Size: 22242560
+MD5sum: e815ca796f19cf24cee3dab0e581c8d5
+SHA1: a0584603b9d36a524faa882465e8a36928c859d7
+SHA256: 94fdbe9a04319ab0535a6e11e5e3fb6874ebf53c3d18f2e75811a61787146930
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: common utilities to mount and interact with a ceph storage cluster
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a collection
+ of common tools that allow one to interact with and administer a Ceph cluster.
+
+Package: ceph-fuse
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 2451
+Depends: libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libfuse3-3 (>= 3.2.3), libgcc-s1 (>= 3.0), librados2, libstdc++6 (>= 9), python3:any, fuse
+Filename: dev/main/binary-arm64/ceph-fuse_17.2.1-pve1_arm64.deb
+Size: 704200
+MD5sum: 5886c51131658009c75e5da116b8ad78
+SHA1: d2a9b8aed2df0d92207ea8ed0cae86fc81decabb
+SHA256: bb0740c88a1ca7059babdf3443ead4b2014390f52c78df0411f4723c7b9727d8
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: FUSE-based client for the Ceph distributed file system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a
+ FUSE-based client that allows one to mount a Ceph file system without
+ root privileges.
+ .
+ Because the FUSE-based client has certain inherent performance
+ limitations, it is recommended that the native Linux kernel client
+ be used if possible.  If it is not practical to load a kernel module
+ (insufficient privileges, older kernel, etc.), then the FUSE client will
+ do.
+
+Package: ceph-grafana-dashboards
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 318
+Filename: dev/main/binary-all/ceph-grafana-dashboards_17.2.1-pve1_all.deb
+Size: 23372
+MD5sum: def619ad9aa1b87b758590a3b0edb8f8
+SHA1: 30b78c50da1438ccac22f8615fc3526706eb6cb3
+SHA256: 4c421a37918a633089c4f26fc9b729db514a3bc91a774a7db5b524a552b1fb8c
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: grafana dashboards for the ceph dashboard
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains Grafana dashboards that are used by the Ceph Dashboard
+ for monitoring.
+
+Package: ceph-immutable-object-cache
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 477
+Depends: ceph-common (= 17.2.1-pve1), librados2 (= 17.2.1-pve1), libc6 (>= 2.28), libgcc-s1 (>= 3.0), libstdc++6 (>= 9)
+Filename: dev/main/binary-arm64/ceph-immutable-object-cache_17.2.1-pve1_arm64.deb
+Size: 139228
+MD5sum: 8008f7ed03bf97197a330f4eba25358c
+SHA1: 89830c960e620ebe88d54f090d6828da4f3cdd19
+SHA256: a03ac87955f54e3369306b80f67d99463c806dbe80c1ff85bb699dc9977e5962
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: Ceph daemon for immutable object cache
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a daemon for immutable
+ object cache.
+
+Package: ceph-mds
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 6949
+Depends: ceph-base (= 17.2.1-pve1), libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 3.0), libgoogle-perftools4, liblua5.3-0, librados2, libstdc++6 (>= 9)
+Recommends: ceph-fuse (= 17.2.1-pve1), libcephfs2 (= 17.2.1-pve1)
+Breaks: ceph (<< 0.93-417)
+Replaces: ceph (<< 0.93-417)
+Filename: dev/main/binary-arm64/ceph-mds_17.2.1-pve1_arm64.deb
+Size: 1954568
+MD5sum: 4f5d10479d6ed1e98da851152ae0e451
+SHA1: 699c946816d2ff5ff5b7f155feb649001054a5af
+SHA256: a6e797330392adffea0eaa464dc8eb0de93eef6782911303ab0dcb48343320a8
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: metadata server for the ceph distributed file system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the metadata server daemon, which is used to
+ create a distributed file system on top of the ceph storage cluster.
+
+Package: ceph-mgr
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 4758
+Depends: ceph-base (= 17.2.1-pve1), ceph-mgr-modules-core (= 17.2.1-pve1), python3-bcrypt, python3-cherrypy3, python3-natsort, python3-distutils, python3-jwt, python3-openssl, python3-pecan, python3-requests, python3-werkzeug, python3-yaml, libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 3.0), libgoogle-perftools4, libpython3.9 (>= 3.9.1), librados2, libsqlite3-0 (>= 3.5.9), libsqlite3-mod-ceph (>= 15.2.0-1), libstdc++6 (>= 9)
+Suggests: ceph-mgr-dashboard, ceph-mgr-diskprediction-local, ceph-mgr-k8sevents, ceph-mgr-cephadm, python3-influxdb
+Breaks: ceph (<< 0.93-417)
+Replaces: ceph (<< 0.93-417)
+Filename: dev/main/binary-arm64/ceph-mgr_17.2.1-pve1_arm64.deb
+Size: 1312812
+MD5sum: 36f44885113553528a8028d18e11db8d
+SHA1: c14f906ad710be79d33051f40dce993341e59bd9
+SHA256: b8dc469608f3438f6e804056a496262153556d73d5b481fcc95f213189e77304
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: manager for the ceph distributed storage system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the manager daemon, which is used to expose high
+ level management and monitoring functionality.
+
+Package: ceph-mgr-cephadm
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 599
+Depends: ceph-mgr (= 17.2.1-pve1), cephadm, openssh-client, python3-jinja2, python3-cherrypy3, python3-natsort
+Filename: dev/main/binary-all/ceph-mgr-cephadm_17.2.1-pve1_all.deb
+Size: 109844
+MD5sum: 1ab39fd192ec509b2f7f0f77cb45c643
+SHA1: 23523b9a83cf02937fc9140f69bd419f5a8c3114
+SHA256: 185c8a5d5cd872eb38fb82ca6273dd92a8cf562ec37e6441b718412ca7e4084a
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: cephadm orchestrator module for ceph-mgr
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the CEPHADM module for ceph-mgr's orchestration
+ functionality, to allow ceph-mgr to perform orchestration functions
+ over a standard SSH connection.
+
+Package: ceph-mgr-dashboard
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 6860
+Depends: ceph-mgr (= 17.2.1-pve1), python3-cherrypy3, python3-jwt, python3-bcrypt, python3-werkzeug, python3-routes
+Filename: dev/main/binary-all/ceph-mgr-dashboard_17.2.1-pve1_all.deb
+Size: 1686636
+MD5sum: 56ff51c67d2c39064d5d26e817bbd69f
+SHA1: 7c925dc4af784c25c24d4d4ff6fdcf180d81faf3
+SHA256: 3b0ee3fea937959d791746b9c7dde1e03724b4bbb083b5f0d6688dcebf4053fd
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: dashboard module for ceph-mgr
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package provides a ceph-mgr module, providing a web-based
+ application to monitor and manage many aspects of a Ceph cluster and
+ related components.
+ .
+ See the Dashboard documentation at http://docs.ceph.com/ for details
+ and a detailed feature overview.
+
+Package: ceph-mgr-diskprediction-local
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 67200
+Depends: ceph-mgr (= 17.2.1-pve1), python3-numpy, python3-scipy, python3-sklearn
+Filename: dev/main/binary-all/ceph-mgr-diskprediction-local_17.2.1-pve1_all.deb
+Size: 7886528
+MD5sum: cb224e16656ef7e528bc35a6b3b934ad
+SHA1: 03f04757f838ab7a6ff8495588e305acb7729f01
+SHA256: ed106b175afda31969108cc6a8c1d0782a9dfeebbe7b7177c4e33072f947dc04
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: diskprediction-local module for ceph-mgr
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the diskprediction_local module for the ceph-mgr
+ daemon, which helps predict disk failures.
+
+Package: ceph-mgr-k8sevents
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 14
+Depends: ceph-mgr (= 17.2.1-pve1), python3-kubernetes
+Filename: dev/main/binary-all/ceph-mgr-k8sevents_17.2.1-pve1_all.deb
+Size: 9064
+MD5sum: 52a07bffc019341555fe3543e941923d
+SHA1: 96912a26d437bd7b435f72f2c96c3f8a9f0d2b2b
+SHA256: 0bd0c1c721d17ecb276f02b633d28419603a4b75aa13dc6959970e242a48b8ab
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: kubernetes events module for ceph-mgr
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the k8sevents module, to allow ceph-mgr to send
+ ceph related events to the kubernetes events API, and track all events
+ that occur within the rook-ceph namespace.
+
+Package: ceph-mgr-modules-core
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 1504
+Depends: python3-dateutil, python3-openssl
+Breaks: ceph-mgr (<< 15.1.0)
+Replaces: ceph-mgr (<< 15.1.0)
+Filename: dev/main/binary-all/ceph-mgr-modules-core_17.2.1-pve1_all.deb
+Size: 219084
+MD5sum: f19bc86fa285e22316a172d948f7eea4
+SHA1: 60cc80bf55ecfab1adf1c3a3425a2e2fef52d094
+SHA256: 8a069b6fb238005cefab5d33f8cea0104bd412d9f46ca0e352f75ef912939d03
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: ceph manager modules which are always enabled
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains a set of core ceph-mgr modules which are always
+ enabled.
+
+Package: ceph-mgr-rook
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 600
+Depends: ceph-mgr (= 17.2.1-pve1), python3-jsonpatch
+Filename: dev/main/binary-all/ceph-mgr-rook_17.2.1-pve1_all.deb
+Size: 47680
+MD5sum: 6321439191e4a3e7f41ce39dbd2aef70
+SHA1: a14c0fdc2c8defda1cd144b61ea0f26dea5035f6
+SHA256: 23c9e9e6adafa976c47243beea7a4b6533ebc5d9034b74f3bb2dee655eb1e073
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: rook module for ceph-mgr
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the rook module for ceph-mgr's orchestration
+ functionality, to allow ceph-mgr to install and configure ceph using
+ Rook.
+
+Package: ceph-mon
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 37684
+Depends: ceph-base (= 17.2.1-pve1), libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 4.2), libgoogle-perftools4, liblz4-1 (>= 0.0~r130), librados2, libsnappy1v5 (>= 1.1.8), libstdc++6 (>= 9), zlib1g (>= 1:1.1.4)
+Breaks: ceph (<< 10), ceph-test (<< 12.2.2-14)
+Replaces: ceph (<< 10), ceph-test (<< 12.2.2-14)
+Filename: dev/main/binary-arm64/ceph-mon_17.2.1-pve1_arm64.deb
+Size: 7066556
+MD5sum: ec1f9bd5542ceeeb81b789d3d9d6a5e7
+SHA1: a779d0bf03f6aecd6f98288aedc5d11e7ae8cc24
+SHA256: f57d790ca6080fa097a714e9b07836580e011dd512231f3151a7c169db435074
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: monitor server for the ceph storage system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the cluster monitor daemon for the Ceph storage
+ system. One or more instances of ceph-mon form a Paxos part-time parliament
+ cluster that provides extremely reliable and durable storage of cluster
+ membership, configuration, and state.
+
+Package: ceph-osd
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 122514
+Depends: ceph-base (= 17.2.1-pve1), sudo, libaio1 (>= 0.3.93), libblkid1 (>= 2.17.2), libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libfuse3-3 (>= 3.2.3), libgcc-s1 (>= 4.2), libgoogle-perftools4, libibverbs1 (>= 1.1.6), liblttng-ust0 (>= 2.5.0), liblz4-1 (>= 0.0~r130), librados2, librdmacm1 (>= 1.0.15), libsnappy1v5 (>= 1.1.8), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), libudev1 (>= 183), zlib1g (>= 1:1.1.4)
+Recommends: ceph-volume (= 17.2.1-pve1), nvme-cli, smartmontools
+Breaks: ceph (<< 10), ceph-osd (<< 17.0.0), ceph-test (<< 12.2.2-14)
+Replaces: ceph (<< 10), ceph-osd (<< 17.0.0), ceph-test (<< 12.2.2-14)
+Filename: dev/main/binary-arm64/ceph-osd_17.2.1-pve1_arm64.deb
+Size: 25112724
+MD5sum: 44421dc7f6d0151ed38f2f138ad6ac21
+SHA1: c642d5588a09249ac7722ebd88b3ff34ce92a9fd
+SHA256: b5a3a2a538d7336a425a6cdbb58b6a4b6571bd9e39a958c41a84b7a971e5fa99
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: OSD server for the ceph storage system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the Object Storage Daemon for the Ceph storage system.
+ It is responsible for storing objects on a local file system
+ and providing access to them over the network.
+
+Package: ceph-prometheus-alerts
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 59
+Filename: dev/main/binary-all/ceph-prometheus-alerts_17.2.1-pve1_all.deb
+Size: 17044
+MD5sum: b5f24fa564835e52dca3d2fb7a966c56
+SHA1: bef389dc6f59bb697ebfe5b540aface3a358618a
+SHA256: b2de27b29592fa48aa0665d9262b1140e3616b2799ccf089e40c2678666feac5
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: prometheus alerts for the ceph dashboard
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains alerts used for prometheus to interact with the
+ Ceph Dashboard.
+
+Package: ceph-resource-agents
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 28
+Depends: ceph (= 17.2.1-pve1), resource-agents
+Recommends: pacemaker
+Filename: dev/main/binary-arm64/ceph-resource-agents_17.2.1-pve1_arm64.deb
+Size: 11928
+MD5sum: 906238ebcb5c26e3cd9d886ba4520de7
+SHA1: b5c9859f79b09d9e51eef11d3e424e8bc03d42cf
+SHA256: e439abb70ad298a7775a086dcfcc78666e13c3f5b9f0329c0fe6e9dee25438b4
+Section: admin
+Priority: extra
+Homepage: http://ceph.com/
+Description: OCF-compliant resource agents for Ceph
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains the resource agents (RAs) which integrate
+ Ceph with OCF-compliant cluster resource managers,
+ such as Pacemaker.
+
+Package: ceph-test
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 231954
+Depends: ceph-common, curl, jq, socat, xmlstarlet, libaio1 (>= 0.3.93), libblkid1 (>= 2.17.2), libc6 (>= 2.30), libcephfs2, libcryptsetup12 (>= 2:2.0), libcurl4 (>= 7.28.0), libexpat1 (>= 2.0.1), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 4.5), libgoogle-perftools4, libicu67 (>= 67.1-1~), libkeyutils1 (>= 1.4), libldap-2.4-2 (>= 2.4.7), liblz4-1 (>= 1.8.0), librabbitmq4 (>= 0.10.0), librados2, libradosstriper1, librbd1, librdkafka1 (>= 0.9.2), librgw2, libsnappy1v5 (>= 1.1.8), libsqlite3-0 (>= 3.7.15), libsqlite3-mod-ceph (>= 15.2.0-1), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), libthrift-0.13.0 (>= 0.13.0-1~), libudev1 (>= 183), zlib1g (>= 1:1.2.0)
+Breaks: ceph-base (<< 1)
+Replaces: ceph-base (<< 11)
+Filename: dev/main/binary-arm64/ceph-test_17.2.1-pve1_arm64.deb
+Size: 47414636
+MD5sum: d891eef63b0ea409518f1c99d47b1c6e
+SHA1: c49578246bd940e67f0ff3b8060f9e5cf43f4229
+SHA256: ea04d928e0a6bda320cece7a2c2bc3815d65099f938592a3a22edce6d0a63a55
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: Ceph test and benchmarking tools
+ This package contains tools for testing and benchmarking Ceph.
+
+Package: ceph-volume
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 679
+Depends: ceph-osd (= 17.2.1-pve1), cryptsetup-bin, e2fsprogs, lvm2, parted, util-linux, xfsprogs, python3-ceph-common, python3.9:any, python3:any
+Filename: dev/main/binary-all/ceph-volume_17.2.1-pve1_all.deb
+Size: 113260
+MD5sum: d2dd1b2223686ab91f8bec1524332b74
+SHA1: 57e5720e1e2137440d8508332505d94d9c3ae40d
+SHA256: e8a6c5c1a17b7a1097eb0eeedfeb1a36418feac636f3c21e034c26501c960b64
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: tool to facilidate OSD deployment
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains a tool to deploy OSD with different devices like
+ lvm or physical disks, and trying to follow a predictable, and robust
+ way of preparing, activating, and starting the deployed OSD.
+
+Package: cephadm
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 367
+Depends: lvm2, python3:any
+Recommends: podman (>= 2.0.2) | docker.io
+Filename: dev/main/binary-arm64/cephadm_17.2.1-pve1_arm64.deb
+Size: 80100
+MD5sum: c3a8d8a7bacbe2e435b8b918eb8fd049
+SHA1: a3758df2411b7e5028d18044351d1033bceaa1ef
+SHA256: 3f59a0a092a3be5b9743c4abb9dfb95de85e562ec33ed6b35e14aa6355dd2093
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: cephadm utility to bootstrap ceph daemons with systemd and containers
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ The cephadm utility is used to bootstrap a Ceph cluster and to manage
+ ceph daemons deployed with systemd and containers.
+
+Package: cephfs-mirror
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 729
+Depends: ceph-common (= 17.2.1-pve1), librados2 (= 17.2.1-pve1), libcephfs2 (= 17.2.1-pve1), libc6 (>= 2.30), libgcc-s1 (>= 3.0), libgoogle-perftools4, libstdc++6 (>= 9)
+Filename: dev/main/binary-arm64/cephfs-mirror_17.2.1-pve1_arm64.deb
+Size: 205220
+MD5sum: 384a56b6ccd0ef67690694e2329d70e9
+SHA1: 937d49bf6e8bf354c0212b2c4275f586794dae7e
+SHA256: ad5a6753b49431c63291398147484634f2fc971abbbb7ff9e723d116838ff61f
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage. This is a daemon for mirroring CephFS
+ directory snapshots between Ceph clusters.
+
+Package: cephfs-shell
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 92
+Depends: python3-cephfs, python3-cmd2, python3-colorama, python3.9:any
+Filename: dev/main/binary-all/cephfs-shell_17.2.1-pve1_all.deb
+Size: 27012
+MD5sum: f1e40c82d83579beab88499d3637cf7c
+SHA1: 306e1330e18c22c267887bca3fe8a2726a86a3d7
+SHA256: 27bef58cd9a272418494e626307428edc2514e0923b6c1747b7a725e9ea25999
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: interactive shell for the Ceph distributed file system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is an interactive tool that
+ allows accessing a Ceph file system without mounting it by providing
+ a nice pseudo-shell which works like an FTP client.
+ .
+ This package contains a CLI for interacting with the CephFS.
+
+Package: cephfs-top
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 44
+Depends: python3-rados, python3.9:any
+Filename: dev/main/binary-all/cephfs-top_17.2.1-pve1_all.deb
+Size: 14204
+MD5sum: 91a4b90fd6a525e1d58aa1156f3105a7
+SHA1: 38ef1f8170d5f02d8eb68e735673f131b1fed57f
+SHA256: 3549e3ad2b950e45c6d6cfe4bf4aad4520adbb799d4cc31f7963fac2c291a64a
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: This package provides a top(1) like utility to display various
+ filesystem metrics in realtime.
+ .
+ This package contains utility for displaying filesystem metrics.
+
+Package: libcephfs-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 127
+Depends: libcephfs2 (= 17.2.1-pve1)
+Conflicts: libceph-dev, libceph1-dev, libcephfs2-dev
+Replaces: libceph-dev, libceph1-dev, libcephfs2-dev
+Filename: dev/main/binary-arm64/libcephfs-dev_17.2.1-pve1_arm64.deb
+Size: 26520
+MD5sum: 55533a0d895c58ee5a9ad8ad76848e36
+SHA1: e8cab3641f56c537142111de81a0a94338a3d0b8
+SHA256: 5909cac26e095f1ab2a2fa48cb24d272377cb4b6728bbbd54af18bf9edde2ae9
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: Ceph distributed file system client library (development files)
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a
+ shared library allowing applications to access a Ceph distributed
+ file system via a POSIX-like interface.
+ .
+ This package contains development files needed for building applications that
+ link against libcephfs.
+
+Package: libcephfs-java
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 27
+Depends: libcephfs-jni (= 17.2.1-pve1)
+Filename: dev/main/binary-all/libcephfs-java_17.2.1-pve1_all.deb
+Size: 18656
+MD5sum: 3ecf7a942b8e27c775e085a80a2bb79e
+SHA1: 9653d6d8c56d8564560c70da6fd5bf34e46ea367
+SHA256: 70bee5510767e7e8ed407a6d287160e89a843f28a018c9b0ee4fa25505a01334
+Section: java
+Priority: optional
+Homepage: http://ceph.com/
+Description: Java libraries for the Ceph File System
+
+Package: libcephfs-jni
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 3597
+Depends: libcephfs2 (= 17.2.1-pve1), libc6 (>= 2.17), libgcc-s1 (>= 3.0), librados2, libstdc++6 (>= 5.2)
+Filename: dev/main/binary-arm64/libcephfs-jni_17.2.1-pve1_arm64.deb
+Size: 640316
+MD5sum: e27b7e8e5043c46361eb37928b51d3d5
+SHA1: f74d8d5fcf58c44511eb6d66d93a8d1c07bb055a
+SHA256: dd8714d04f1a7b65cb490a318f832320ce99c3ddf4b781bdf1b61489b1e346b0
+Section: java
+Priority: optional
+Homepage: http://ceph.com/
+Description: Java Native Interface library for CephFS Java bindings
+
+Package: libcephfs2
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 2013
+Depends: libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 3.0), librados2, libstdc++6 (>= 9)
+Conflicts: libceph, libceph1, libcephfs
+Replaces: libceph, libceph1, libcephfs
+Filename: dev/main/binary-arm64/libcephfs2_17.2.1-pve1_arm64.deb
+Size: 603232
+MD5sum: c752621784ce231d50315bacd98e6c68
+SHA1: b42143f57cdefdd6eaf70398964c093be3a49d16
+SHA256: 3ab0b5acf4defee1efb3cada4a3cd314475ff0656c222f652572848734a79ae0
+Section: libs
+Priority: optional
+Homepage: http://ceph.com/
+Description: Ceph distributed file system client library
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a
+ shared library allowing applications to access a Ceph distributed
+ file system via a POSIX-like interface.
+
+Package: librados-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 1163
+Depends: librados2 (= 17.2.1-pve1), libc6 (>= 2.17), libgcc-s1 (>= 3.0), libstdc++6 (>= 5.2)
+Conflicts: librados1-dev, librados2-dev
+Replaces: librados1-dev, librados2-dev
+Filename: dev/main/binary-arm64/librados-dev_17.2.1-pve1_arm64.deb
+Size: 243228
+MD5sum: 19d2aa75f8cf7a85b60fbc96ece80965
+SHA1: c488097788ec3764cb2a1ef86d354732bb28378c
+SHA256: e38d1687a43cf65560ab5a0ce4fa4133ae9f0f09eccf4a526b5f5ee0ed05da5d
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS distributed object store client library (development files)
+ RADOS is a reliable, autonomic distributed object storage cluster
+ developed as part of the Ceph distributed storage system.  This is a
+ shared library allowing applications to access the distributed object
+ store using a simple file-like interface.
+ .
+ This package contains development files needed for building applications that
+ link against librados.
+
+Package: librados2
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 12930
+Depends: libblkid1 (>= 2.17.2), libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 3.0), libibverbs1 (>= 1.1.6), liblttng-ust0 (>= 2.5.0), librdmacm1 (>= 1.0.15), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), libudev1 (>= 183), zlib1g (>= 1:1.1.4)
+Conflicts: librados
+Replaces: librados
+Filename: dev/main/binary-arm64/librados2_17.2.1-pve1_arm64.deb
+Size: 2933472
+MD5sum: fd3284ad15d313db01fe223334cfd9b2
+SHA1: 824133e6682cc68dc8560b6e7a53a0a77973899a
+SHA256: f6b9c2301dcd81fcd578fe6475a308ebcadd219b4485aee73403065d16135952
+Section: libs
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS distributed object store client library
+ RADOS is a reliable, autonomic distributed object storage cluster
+ developed as part of the Ceph distributed storage system.  This is a
+ shared library allowing applications to access the distributed object
+ store using a simple file-like interface.
+
+Package: libradospp-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 127
+Depends: librados-dev (= 17.2.1-pve1)
+Filename: dev/main/binary-arm64/libradospp-dev_17.2.1-pve1_arm64.deb
+Size: 31968
+MD5sum: ae2e691441b0ae6f4c6f32727bda1b2b
+SHA1: 66d3192311b430ab1ef3aec6631d2519bed73f8a
+SHA256: 6a40562887a7174ad5b932633f511a12f6d1a36252653133964d81b4e2e66ba3
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS distributed object store client C++ library (development files)
+ RADOS is a reliable, autonomic distributed object storage cluster
+ developed as part of the Ceph distributed storage system.  This is a
+ shared library allowing applications to access the distributed object
+ store using a simple file-like interface.
+ .
+ This package contains development files needed for building C++ applications that
+ link against librados.
+
+Package: libradosstriper-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 47
+Depends: libradosstriper1 (= 17.2.1-pve1)
+Filename: dev/main/binary-arm64/libradosstriper-dev_17.2.1-pve1_arm64.deb
+Size: 14056
+MD5sum: 60d3655c93e2d636febfd2597b5b1fac
+SHA1: 9babae021e7564c6664a85fe4b1d185e3aee0121
+SHA256: 9ae14f0e43d25020eb4b763a256f7584c32cfe6a30ecee0e8d76fec5a07ca49c
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS striping interface (development files)
+ libradosstriper is a striping interface built on top of the rados
+ library, allowing to stripe bigger objects onto several standard
+ rados objects using an interface very similar to the rados one.
+ .
+ This package contains development files needed for building applications that
+ link against libradosstriper.
+
+Package: libradosstriper1
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 1538
+Depends: librados2 (= 17.2.1-pve1), libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 3.0), libstdc++6 (>= 9)
+Filename: dev/main/binary-arm64/libradosstriper1_17.2.1-pve1_arm64.deb
+Size: 394256
+MD5sum: 66e8e67363e27041c5cb981f69f13412
+SHA1: eefec8ac1c35749781204dcacbacf6153a3d8e5b
+SHA256: f031663da4f3213c035d2fc40bfac8bb52435b205dfaa29966d3b7d5e6dc9550
+Section: libs
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS striping interface
+ Striping interface built on top of the rados library, allowing
+ to stripe bigger objects onto several standard rados objects using
+ an interface very similar to the rados one.
+
+Package: librbd-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 121
+Depends: librados-dev (= 17.2.1-pve1), librbd1 (= 17.2.1-pve1)
+Conflicts: librbd1-dev
+Replaces: librbd1-dev
+Filename: dev/main/binary-arm64/librbd-dev_17.2.1-pve1_arm64.deb
+Size: 24288
+MD5sum: 7a0b98c252bd41712e518d165d9eed68
+SHA1: 3d795ed09602fb5761d935c3f79b88ebef690ed1
+SHA256: 76befd9858bdbc0ec4744ee8adb5614c6aed8a5aa9fc2d1e882be8b012be8cbf
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS block device client library (development files)
+ RBD is a block device striped across multiple distributed objects
+ in RADOS, a reliable, autonomic distributed object storage cluster
+ developed as part of the Ceph distributed storage system.  This is a
+ shared library allowing applications to manage these block devices.
+ .
+ This package contains development files needed for building applications that
+ link against librbd1.
+
+Package: librbd1
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 13828
+Depends: librados2 (= 17.2.1-pve1), libaio1 (>= 0.3.93), libc6 (>= 2.30), libcryptsetup12 (>= 2:2.0), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 4.5), liblttng-ust0 (>= 2.5.0), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9)
+Filename: dev/main/binary-arm64/librbd1_17.2.1-pve1_arm64.deb
+Size: 2730396
+MD5sum: f46e32f12f990d260d66fba1ed78bda3
+SHA1: f9e959e09ab4e2a874db08909971a735d2ed2b9d
+SHA256: cf6bac9711e87a3f9b21e5e015b5b2202df8d7e59898c1ce4e84cfa5cca5cb5b
+Section: libs
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS block device client library
+ RBD is a block device striped across multiple distributed objects
+ in RADOS, a reliable, autonomic distributed object storage cluster
+ developed as part of the Ceph distributed storage system.  This is a
+ shared library allowing applications to manage these block devices.
+
+Package: librgw-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 30
+Depends: librados-dev (= 17.2.1-pve1), librgw2 (= 17.2.1-pve1)
+Filename: dev/main/binary-arm64/librgw-dev_17.2.1-pve1_arm64.deb
+Size: 11976
+MD5sum: 70069ed614e6cfd8af828331630e9447
+SHA1: 07ea7765c439c997c929b6ee0d921b99cbe709ec
+SHA256: a512e5fb3fc1aca5e72edcf220a2e966d46423f620efdce585fd1db83bea1595
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS client library (development files)
+ RADOS is a distributed object store used by the Ceph distributed
+ storage system.  This package provides a REST gateway to the
+ object store that aims to implement a superset of Amazon's S3
+ service.
+ .
+ This package contains development files needed for building applications
+ that link against librgw2.
+
+Package: librgw2
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 19421
+Depends: librados2 (= 17.2.1-pve1), libc6 (>= 2.30), libcurl4 (>= 7.28.0), libexpat1 (>= 2.0.1), libgcc-s1 (>= 4.5), libicu67 (>= 67.1-1~), libldap-2.4-2 (>= 2.4.7), liblua5.3-0, liblz4-1 (>= 1.8.0), librabbitmq4 (>= 0.10.0), librdkafka1 (>= 0.9.2), libsnappy1v5 (>= 1.1.8), libsqlite3-0 (>= 3.5.9), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), libthrift-0.13.0 (>= 0.13.0-1~), zlib1g (>= 1:1.2.0)
+Filename: dev/main/binary-arm64/librgw2_17.2.1-pve1_arm64.deb
+Size: 4718152
+MD5sum: 450ebdbf9262de94c4d1803722105718
+SHA1: 667244a681f026ff1d891fc7ca152b89aa2c0629
+SHA256: 3acf1ada4a9c061fdf2189587d706e3b0cb84890000910d7f899be40a71079c8
+Section: libs
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS Gateway client library
+ RADOS is a distributed object store used by the Ceph distributed
+ storage system.  This package provides a REST gateway to the
+ object store that aims to implement a superset of Amazon's S3
+ service.
+ .
+ This package contains the library interface and headers only.
+
+Package: libsqlite3-mod-ceph
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 370
+Depends: libc6 (>= 2.30), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 3.0), librados2, libstdc++6 (>= 6)
+Filename: dev/main/binary-arm64/libsqlite3-mod-ceph_17.2.1-pve1_arm64.deb
+Size: 110716
+MD5sum: fa0d7c778cfe364c7a02d1bfebdb3038
+SHA1: aada701149fc1187bf9030168e701a98b1c5c6ab
+SHA256: 5c1bc3657c915c32d8aa81917559ec1b32d7279cc469aba54247c3fd720fe1c1
+Section: libs
+Priority: optional
+Homepage: http://ceph.com/
+Description: SQLite3 VFS for Ceph
+ A SQLite3 VFS for storing and manipulating databases stored on Ceph's RADOS
+ distributed object store.
+ .
+ This packages contains the loadable extension module for SQLite3.
+
+Package: libsqlite3-mod-ceph-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 18
+Depends: libsqlite3-mod-ceph (= 17.2.1-pve1), libsqlite3-dev
+Filename: dev/main/binary-arm64/libsqlite3-mod-ceph-dev_17.2.1-pve1_arm64.deb
+Size: 10312
+MD5sum: 5c33aaa2ad1214618b60fc2d50753f7a
+SHA1: 2406e745a2212e29082a50ef084e8998b71aa447
+SHA256: 4309ed4b58ae4828d3090056b5f5520dc5daa7442f872c91196388888b970309
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: SQLite3 VFS for Ceph (development files)
+ A SQLite3 VFS for storing and manipulating databases stored on Ceph's RADOS
+ distributed object store.
+ .
+ This package contains development files needed for building applications that
+ link against libsqlite3-mod-ceph.
+
+Package: python3-ceph
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 14
+Depends: python3-cephfs (= 17.2.1-pve1), python3-rados (= 17.2.1-pve1), python3-rbd (= 17.2.1-pve1), python3-rgw (= 17.2.1-pve1)
+Filename: dev/main/binary-arm64/python3-ceph_17.2.1-pve1_arm64.deb
+Size: 9004
+MD5sum: f2d5f6b7c030e3618558f5088f7f85ff
+SHA1: 632f2ae8f9dfd225f7b58e6bd5a29be58f68eb0b
+SHA256: 541143b5ea2bde98ed2eca9ae71c4cf4df430e0b2113e1dd1d2ffbbdd756bab8
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Meta-package for python libraries for the Ceph libraries
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package is a metapackage for all Python 2 bindings.
+
+Package: python3-ceph-argparse
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 92
+Depends: python3:any
+Filename: dev/main/binary-all/python3-ceph-argparse_17.2.1-pve1_all.deb
+Size: 27528
+MD5sum: 0f4949cc7e08177d5c1c3ce31f89ed6d
+SHA1: e86f7247a1e52c698cfb807cfb1ec3ebfce6cfb6
+SHA256: e6d9d15f434aca289e4b7eecd953463896d0ebf6d0759e9e89df6f889425fff0
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Python 3 utility libraries for Ceph CLI
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains types and routines for Python 3 used by the
+ Ceph CLI as well as the RESTful interface.
+
+Package: python3-ceph-common
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: all
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 245
+Depends: python3-yaml, python3:any
+Filename: dev/main/binary-all/python3-ceph-common_17.2.1-pve1_all.deb
+Size: 47568
+MD5sum: ca68917ec6009b2245e95a5e816885ef
+SHA1: a338d3cb8b4b5bb70b898e2f992b40e7344c8a21
+SHA256: 533d1f22a10044a3ba1bfbe3eb0ad2210222d7684315a0d74a935d6bd20fb2ff
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Python 3 utility libraries for Ceph
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains data structures, classes and functions used by Ceph.
+ It also contains utilities used for the cephadm orchestrator.
+
+Package: python3-cephfs
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 471
+Depends: libcephfs2 (= 17.2.1-pve1), python3-rados (= 17.2.1-pve1), python3-ceph-argparse (= 17.2.1-pve1), python3 (<< 3.10), python3 (>= 3.9~), libc6 (>= 2.17)
+Filename: dev/main/binary-arm64/python3-cephfs_17.2.1-pve1_arm64.deb
+Size: 140276
+MD5sum: 9c5efc899101d135c6645759570680f1
+SHA1: 8c8634c582eb42bbde19aa979021aacdf19bddce
+SHA256: 10e643ac5c2d2cd9e83735612c1f0509a632de433cab7bfeaa0d17d05a7a8f26
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Python 3 libraries for the Ceph libcephfs library
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains Python 3 libraries for interacting with Ceph's
+ CephFS file system client library.
+
+Package: python3-rados
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 1043
+Depends: librados2, python3 (<< 3.10), python3 (>= 3.9~), libc6 (>= 2.17)
+Filename: dev/main/binary-arm64/python3-rados_17.2.1-pve1_arm64.deb
+Size: 282040
+MD5sum: 0d7da2736912dec65e86972fc0677492
+SHA1: 1f3f15cfb69fbdd57a47ced97c4c116464e0e205
+SHA256: 8f968789b38784c06f2c5b9e394ef36f04bbdc25ded1b1587db0c662721ade2d
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Python 3 libraries for the Ceph librados library
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains Python 3 libraries for interacting with Ceph's
+ RADOS object storage.
+
+Package: python3-rbd
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 1043
+Depends: librbd1 (>= 17.2.1-pve1), python3 (<< 3.10), python3 (>= 3.9~), libc6 (>= 2.17)
+Filename: dev/main/binary-arm64/python3-rbd_17.2.1-pve1_arm64.deb
+Size: 261112
+MD5sum: f168e157925cadeb006f87e6e6dc2ac5
+SHA1: 5ea930a6d1226928fd0e0b18a04edb2ec8a62207
+SHA256: d77fd989da0d04d5f8812980fcfec83b8c92cdca85730127288d25a6ee0fe347
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Python 3 libraries for the Ceph librbd library
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains Python 3 libraries for interacting with Ceph's
+ RBD block device library.
+
+Package: python3-rgw
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 262
+Depends: librgw2 (>= 17.2.1-pve1), python3-rados (= 17.2.1-pve1), python3 (<< 3.10), python3 (>= 3.9~), libc6 (>= 2.17)
+Filename: dev/main/binary-arm64/python3-rgw_17.2.1-pve1_arm64.deb
+Size: 88108
+MD5sum: 260d52fe6a04042e254c6c1a3ef34078
+SHA1: 92893511b838a69e1757296bf4b2f2325439b584
+SHA256: 6ceb108301b3dae23f28e015308a1fbce360d1d110a53ac93c71e6fafeecd1e0
+Section: python
+Priority: optional
+Homepage: http://ceph.com/
+Description: Python 3 libraries for the Ceph librgw library
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.
+ .
+ This package contains Python 3 libraries for interacting with Ceph's
+ RGW library.
+
+Package: rados-objclass-dev
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 20
+Depends: librados-dev (= 17.2.1-pve1)
+Filename: dev/main/binary-arm64/rados-objclass-dev_17.2.1-pve1_arm64.deb
+Size: 10132
+MD5sum: 1b05bdc886addb79741753364d7fcc41
+SHA1: 71d5dbfda71b11e69fbb6f83913edb9fb604725d
+SHA256: f0517a43cbd65f0bcbd664363bd20d75c32e8e9b2e1b073980470b02644263aa
+Section: libdevel
+Priority: optional
+Homepage: http://ceph.com/
+Description: RADOS object class development kit.
+ .
+ This package contains development files needed for building RADOS object class plugins.
+
+Package: radosgw
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 59013
+Depends: ceph-common (= 17.2.1-pve1), librgw2 (= 17.2.1-pve1), mime-support, libc6 (>= 2.30), libcurl4 (>= 7.28.0), libexpat1 (>= 2.0.1), libgcc-s1 (>= 4.5), libgoogle-perftools4, libicu67 (>= 67.1-1~), libldap-2.4-2 (>= 2.4.7), liblua5.3-0, liblz4-1 (>= 1.8.0), librabbitmq4 (>= 0.10.0), librados2, librdkafka1 (>= 0.9.2), libsnappy1v5 (>= 1.1.8), libsqlite3-0 (>= 3.5.9), libssl1.1 (>= 1.1.0), libstdc++6 (>= 9), libthrift-0.13.0 (>= 0.13.0-1~), zlib1g (>= 1:1.2.0)
+Recommends: ntp | time-daemon
+Suggests: gawk
+Filename: dev/main/binary-arm64/radosgw_17.2.1-pve1_arm64.deb
+Size: 14537872
+MD5sum: 28c5f885b4316857c88169c9e40ffc61
+SHA1: 858c431e7afbbe8fc28fda57ce4f46cce36f98f5
+SHA256: 390fbbe586e6d47b60204032de913237f69f23d540290a8f163942f31f1e1d2a
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: REST gateway for RADOS distributed object store
+ RADOS is a distributed object store used by the Ceph distributed
+ storage system.  This package provides a REST gateway to the
+ object store that aims to implement a superset of Amazon's S3
+ service as well as the OpenStack Object Storage ("Swift") API.
+ .
+ This package contains the proxy daemon and related tools only.
+
+Package: rbd-fuse
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 252
+Depends: libc6 (>= 2.28), libfuse3-3 (>= 3.2.3), libgcc-s1 (>= 3.0), librados2, librbd1, libstdc++6 (>= 9)
+Recommends: fuse
+Filename: dev/main/binary-arm64/rbd-fuse_17.2.1-pve1_arm64.deb
+Size: 78668
+MD5sum: e8f56dca6f6f503dcc51d5a97be220e0
+SHA1: e6b85ca355a306efe7ef82e8e7eebd191a095cd4
+SHA256: bfd21cc877c05ef0568c5e6784da00aee7a41b2328ef6face9748b3b50d11e92
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: FUSE-based rbd client for the Ceph distributed file system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a
+ FUSE-based client that allows one to map Ceph rbd images as files.
+ .
+ FUSE base client that allows one to map Ceph rbd images as files.
+
+Package: rbd-mirror
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 14792
+Depends: ceph-common (= 17.2.1-pve1), librados2 (= 17.2.1-pve1), libc6 (>= 2.30), libcryptsetup12 (>= 2:2.0), libfmt7 (>= 7.1.3+ds1), libgcc-s1 (>= 4.5), libgoogle-perftools4, libssl1.1 (>= 1.1.0), libstdc++6 (>= 9)
+Filename: dev/main/binary-arm64/rbd-mirror_17.2.1-pve1_arm64.deb
+Size: 3024500
+MD5sum: de06ee23b20e81bbd6eeb19080d3193d
+SHA1: 8f4def5b999ca001486798212506b01784bc3590
+SHA256: c5a4c7486ea46496790a85a1542e5a3284ef80d07f8124547a27ffbe327b1651
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: Ceph daemon for mirroring RBD images
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a
+ daemon for mirroring RBD images between Ceph clusters, streaming
+ changes asynchronously.
+
+Package: rbd-nbd
+Source: ceph
+Version: 17.2.1-pve1
+Architecture: arm64
+Maintainer: Ceph Maintainers <ceph-maintainers@lists.ceph.com>
+Installed-Size: 490
+Depends: libc6 (>= 2.28), libgcc-s1 (>= 3.0), libnl-3-200 (>= 3.2.7), libnl-genl-3-200 (>= 3.2.21), librados2, librbd1, libstdc++6 (>= 9)
+Filename: dev/main/binary-arm64/rbd-nbd_17.2.1-pve1_arm64.deb
+Size: 149228
+MD5sum: ddc8c9f0480faa80d9af9fa00923509c
+SHA1: bcb4137a8befec5170f2dd0b48f4bc8336526a66
+SHA256: 298d56e07234728a32a6ba7b9a80e685ee1b9718ea608a256d3ed3706f7c7ce5
+Section: admin
+Priority: optional
+Homepage: http://ceph.com/
+Description: NBD-based rbd client for the Ceph distributed file system
+ Ceph is a massively scalable, open-source, distributed
+ storage system that runs on commodity hardware and delivers object,
+ block and file system storage.  This is a
+ NBD-based client that allows one to map Ceph rbd images as local
+ block device.
+ .
+ NBD base client that allows one to map Ceph rbd images as local
+ block device.
+
